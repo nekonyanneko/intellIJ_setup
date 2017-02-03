@@ -1,0 +1,28 @@
+IntelliJをダウンロードする
+http://www.jetbrains.com/idea/download/index.html
+
+ダウンロードしてきたファイルを移動し、解凍する
+$ sudo mv ideaIC-2016.3.4.tar.gz /opt/
+$ cd /opt/
+$ sudo tar xvfz ideaIC-2016.3.4.tar.gz
+
+/etc/profileにJAVA_HOMEとIDEA_JDKのパスを設定する
+*******************************************************************************
+$ export JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/bin
+$ export IDEA_JDK=$JAVA_HOME
+*******************************************************************************
+＊JAVA_HOMEはupdate-alternativesで管理している場合、削除する
+＊以下、例
+*******************************************************************************
+#update-alternativesに登録しているため以下をコメントアウト
+#JAVA_HOME=/usr/local/lib/jdk1.8.0_121
+PATH=$PATH:$JAVA_HOME/bin
+export JAVA_HOME
+export IDEA_JDK=$JAVA_HOME
+export PATH
+*******************************************************************************
+
+IntelliJのインストール
+$ cd /opt/idea-IC-163.12024.16/bin/
+$ ./idea.sh
+

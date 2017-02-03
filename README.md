@@ -1,1 +1,1 @@
-# intellIJ_setup
+# intellIJのsetup手順
