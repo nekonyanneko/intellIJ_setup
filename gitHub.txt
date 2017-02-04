@@ -1,0 +1,61 @@
+＊intellijとgitHubの連携＊
+
+・IntelliJ IDEAのWelcome画面下のConfigureをクリックしメニューからSettingsを選択する
+
+・改行コードの設定
+　左メニュー -> Editor -> Code Style
+
+・改行コードをLF（linux）に設定
+　Lien separator (for new line):に"Unix and OS X(\n)"を選択する
+
+・Master passwordの設定
+　master passwordを使用する設定にしておくと、外部サービスのパスワードを保存する必要がある場合
+　(今回の場合はGitHubのアカウントパスワード)、事前に登録しておいたmaster passwordで保護し、
+　外部サービスのパスワードが必要になったときにmaster passwordで認証しなければそのパスワードが参照できないようになる。
+
+　左メニュー -> Appearance & Behavior -> System Settings -> Passwords
+　In KeePassにチェック
+　Master Passwordにパスワードを設定
+
+・Git/GitHubプラグインの確認
+　左メニュー -> Plugins
+　デフォルトで有効になっていると思いうが念のためGit Integration, GitHubが有効になっていることを確認する
+
+・GitHubのアクセストークンの作成
+　左メニュー -> Version Control -> GitHub
+　GitHubにアクセスする際に必要になるアクセストークンを作成。
+　Hostが"github.com"になっていることを確認し、AuthTypeに"Token"を選択してCreate API Tokenボタンをクリックする。
+
+・Login to GitHub画面でGitHubのアカウントとパスワードを入力しLoginボタンをクリックする。
+
+・Login to GitHub画面でGitHubのアカウントとパスワードを入力しLoginボタンをクリックする。
+　認証に成功するとトークンが生成されます。
+
+・次にTestボタンをクリックして確認する
+　トークンによる認証が成功するとSuccess画面が表示される
+
+・次にGitHub側でPersonal Access Tokenが登録されていることを確認するためGitHubのSettingsページにアクセスする。
+　Personal SettingsメニューのPersonal Access Tokensをクリックして"IntelliJ Plugin"という名前のトークンが登録されていることを確認する。
+
+・Gitの確認
+　左メニュー -> Version Control -> Git
+　Path to Git executable:にgit.exeのパスが設定されていることを確認する
+
+・次に右のTestボタンをクリックして確認します。
+
+・プロジェクトを作成する
+　Welcome画面のCreate New Projectをクリックしてプロジェクトを作成
+
+・ローカルリポジトリの作成
+　メニューバー -> VCS -> "Enable Version Control Integration..."
+　Enable Version Control Integration画面で"Select a version control system to associate with the project root:"にGitを選択してOKボタンをクリックする。
+　これでプロジェクトがGitリポジトリとして初期化される
+
+・作成したファイルをadd
+　プロジェクト名を右クリックしコンテキストメニューからGit -> Addを選択します。
+
+・first commit
+　プロジェクト名を右クリックしコンテキストメニューからGit -> Commit Directory...を選択する。
+　コミットメッセージに"first commit"と入力しCommitボタンをクリックする。
+
+・リモートリポジトリの作成は済んでいるものとして、あとは右クリックでpushやcloneなども試してみるとよい。
